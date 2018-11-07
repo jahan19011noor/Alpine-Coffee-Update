@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Alpine Coffee</title>
+    <!--css link-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <!--css link-->
+    <script type="text/javascript">
+
+        function calculate(){
+            var industryAverage= parseFloat(document.getElementById('industryAverage').value);
+            var alpineCost= parseFloat(document.getElementById('alpineCost').value);
+            var rooms= parseFloat(document.getElementById('rooms').value);
+            var fillRate= parseFloat(document.getElementById('fillRate').value);
+            var cupsPerDay= parseFloat(document.getElementById('cupsPerDay').value);
+            var avg = industryAverage * rooms * fillRate * cupsPerDay;
+            var cst = alpineCost * rooms * fillRate * cupsPerDay;
+           
+            if(cst==NaN){
+                document.getElementById('costPerMonth').value = 0.00;
+            }else{
+                
+                document.getElementById('costPerMonth').value = avg - cst;
+            }
+        }
+
+//0.7 * 100 * 70 * 75 = 367,500
+//0.25 * 100 * 70 * 75 = 131,250
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="mobile_nav">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="">
+                </a>
+                <input class="menu-btn" type="checkbox" id="menu-btn" />
+                <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="price.html">Price</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="quality.html">Quality</a></li>
+                    <li><a class="active" href="saving_calculator.html">Savings Calculator</a></li>
+                    <li><a href="guest_experience.html">Guest Experience</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="saving_calculator">
+        <div class="container">
+            <a href="contact.html" style="background: #efd33a;padding: 10px 30px;
+            border-radius: 50px;color: #000000; font-size: 18px;text-transform: uppercase;
+            -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.62);-moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.62);
+            box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.62);margin-left:40%;">Free Sample Today</a>    
+            <h1>Savings Calculator</h1>
+            <p>See how much you can save by switching to Alpine Coffee</p>
+            <div class="col-md-7">
+                <h3>“You would save $1,000 per month by switching to Alpine Coffee.”</h3>
+            </div>
+            <div class="col-md-5">
+                <table class="calculate_table">
+                    <tr class="calculate_table_row2 cal_r_f">
+                        <td>
+                            <label>Industry Average:</label> 
+                            <input type="text" placeholder="0" id="industryAverage"> 
+                            <span>Cup</span> 
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row1">
+                        <td>
+                            <label>Alpine Cost:</label> 
+                            <input type="text" placeholder="0" id="alpineCost">             
+                            <span>Cup</span>
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row2">
+                        <td>
+                            <label># of Rooms:</label> 
+                            <input type="text" placeholder="0" id="rooms">               
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row1">
+                        <td>
+                            <label>Fill Rate:</label> 
+                            <input type="text" placeholder="0" id="fillRate">                 
+                            <span>%</span> 
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row2">
+                        <td>
+                            <label>Cups per day:</label> 
+                            <input type="text" placeholder="0" id="cupsPerDay">              
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row1">
+                        <td>
+                            <label>Cost per month:</label> 
+                            <input type="text" placeholder="0" id="costPerMonth">          
+                            <span>$</span> 
+                        </td>
+                    </tr>
+                    <tr class="calculate_table_row1 submit">
+                        <td> 
+                            <input type="submit" value="Calculattion" onclick="calculate()">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer_top">
+            <div class="container">
+                <div class="col-md-4">
+                    <h3>Call Us</h3>
+                    <img src="images/21.png" alt="">
+                    <p>303-761-2500</p>
+                    <p>Mon-Sat: 09:00-0600 GMT</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Social Links</h3>
+                    <img src="images/22.png" alt="">
+                    <ul>
+                        <li><a href="#"><img src="images/24.png"></a></li>
+                        <li><a href="#"><img src="images/26.png"></a></li>
+                        <li><a href="#"><img src="images/twitter.png"></a></li>
+                        <li><a href="#"><img src="images/27.png"></a></li>
+                        <li><a href="#"><img src="images/28.png"></a></li>
+                    </ul>
+                    <p>Mon-Sat: 09:00-0600 GMT</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Contact Us</h3>
+                    <img src="images/23.png" alt="">
+                    <p class="contact_cont"><span class="email"></span> sales@AlpineCoffee.com</p>
+                    <p class="contact_cont"><span class="address"></span> 2860 S. Tejon St., Englewood, CO. 80110</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container">
+                <p>© Copyright 2018. All rights reserved by <span>inBrain</span></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!--js link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!--js link-->
+</body>
+
+</html>
