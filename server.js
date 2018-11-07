@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+var PORT = process.env.PORT || 3000;
 // app.use(bodyParser.json()); // support json encoded bodies
 // app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
@@ -41,5 +42,9 @@ app.post('/user', function(req, res){
 });
 
 
-app.listen(4000);
-console.log('Server started! At http://localhost:' + '8080');
+app.listen(PORT,function(){
+console.log('server successfully started on port '+PORT);
+});
+
+// app.listen(4000);
+// console.log('Server started! At http://localhost:' + '8080');
